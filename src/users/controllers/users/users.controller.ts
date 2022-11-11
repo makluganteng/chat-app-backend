@@ -13,9 +13,11 @@ import {
 import { CreateUsersDto } from 'src/users/dtos/CreateUsersDto.dto';
 import { UsersService } from 'src/users/services/users/users.service';
 
+
 @Controller('users')
 export class UsersController {
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService) { }
+
   @Get()
   getUsers() {
     return this.usersService.fetchUsers();

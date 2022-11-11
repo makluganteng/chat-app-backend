@@ -6,4 +6,7 @@ export class CreateUsersDto {
 
   @IsNotEmpty()
   password: string;
+
+  @IsNotEmpty()
+  age: number;
 }

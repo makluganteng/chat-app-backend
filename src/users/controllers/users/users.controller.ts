@@ -20,7 +20,7 @@ export class UsersController {
 
   @Get()
   getUsers() {
-    return this.usersService.fetchUsers();
+    return this.usersService.findUsers();
   }
 
   @Post('create')
@@ -31,12 +31,12 @@ export class UsersController {
     return {};
   }
 
-  @Get(':id') //get users by id
-  getUsersById(@Param('id', ParseIntPipe) id: number) {
-    console.log(id);
-    const user = this.usersService.fetchUsersById(id);
-    if (!user)
-      throw new HttpException('User not Found', HttpStatus.BAD_REQUEST);
-    return user;
-  }
+  // @Get(':id') //get users by id
+  // getUsersById(@Param('id', ParseIntPipe) id: number) {
+  //   console.log(id);
+  //   const user = this.usersService.fetchUsersById(id);
+  //   if (!user)
+  //     throw new HttpException('User not Found', HttpStatus.BAD_REQUEST);
+  //   return user;
+  // }
 }
